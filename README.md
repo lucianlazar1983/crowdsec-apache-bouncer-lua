@@ -2,7 +2,6 @@
 
 This project provides a CrowdSec bouncer for Apache using `mod_lua`. 
 It integrates CrowdSec's decision engine directly into Apache, allowing you to block malicious IPs before they can access your web resources.
-It is useful when you don't want an IP address to be blocked, but show an error instead. Also when your Apache is behind a reverse proxy like CloudFlare, so your decisions could still be somehow applied.
 ---
 
 **🛑 IMPORTANT DISCLAIMER 🛑**
@@ -31,6 +30,8 @@ It is useful when you don't want an IP address to be blocked, but show an error 
 * **Automatic Installation & API Key Management:** A single script handles dependency installation and automatically generates/configures the bouncer API key using `cscli`.
 * **Caching for Performance:** Reduces LAPI overhead by caching decisions for a configurable `cache_ttl`.
 * **Comprehensive Logging:** Logs all events to `/var/log/crowdsec-apache-bouncer.log` for easy auditing.
+* **It is useful when you don't want an IP address to be blocked, but show an error instead.
+* **It is useful when your Apache is behind a reverse proxy like CloudFlare.
 
 ---
 
