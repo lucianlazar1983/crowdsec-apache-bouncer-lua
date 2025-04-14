@@ -2,7 +2,7 @@
 
 This project provides a CrowdSec bouncer for Apache using `mod_lua`. 
 It integrates CrowdSec's decision engine directly into Apache, allowing you to block malicious IPs before they can access your web resources.
-
+It is useful when you don't want an IP address to be blocked, but show an error instead. Also when your Apache is behind a reverse proxy like CloudFlare, so your decisions could still be somehow applied.
 ---
 
 **🛑 IMPORTANT DISCLAIMER 🛑**
