@@ -30,8 +30,8 @@ It integrates CrowdSec's decision engine directly into Apache, allowing you to b
 * **Automatic Installation & API Key Management:** A single script handles dependency installation and automatically generates/configures the bouncer API key using `cscli`.
 * **Caching for Performance:** Reduces LAPI overhead by caching decisions for a configurable `cache_ttl`.
 * **Comprehensive Logging:** Logs all events to `/var/log/crowdsec-apache-bouncer.log` for easy auditing.
-* **It is useful when you don't want an IP address to be blocked, but show an error instead.
-* **It is useful when your Apache is behind a reverse proxy like CloudFlare.
+* **It is useful when you don't want an IP address to be blocked, but show an error instead**.
+* **It is useful when your Apache is behind a reverse proxy like CloudFlare**.
 
 ---
 
