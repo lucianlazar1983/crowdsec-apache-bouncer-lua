@@ -1,10 +1,12 @@
-# 🛡️ CrowdSec Apache Bouncer with mod_lua
+<a href='https://ko-fi.com/W7W61NW50T' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+#  CrowdSec Apache Bouncer with mod_lua
 
 This project provides a CrowdSec bouncer for Apache using `mod_lua`. 
 It integrates CrowdSec's decision engine directly into Apache, allowing you to block malicious IPs before they can access your web resources.
 ---
 
-**🛑 IMPORTANT DISCLAIMER 🛑**
+** IMPORTANT DISCLAIMER **
 
  This software is provided **"AS IS"** and **WITHOUT ANY WARRANTY OR RESPONSIBILITY**, express or implied. This includes, but is not limited to, implied warranties of merchantability or fitness for a particular purpose.
 
@@ -15,7 +17,7 @@ It integrates CrowdSec's decision engine directly into Apache, allowing you to b
 **USE THIS CODE ENTIRELY AT YOUR OWN RISK.**
 
 
-## ⚙️ Overview
+##  Overview
 
 **Key Capabilities:**
 
@@ -35,7 +37,7 @@ It integrates CrowdSec's decision engine directly into Apache, allowing you to b
 
 ---
 
-## 📋 Prerequisites
+##  Prerequisites
 
 While the installation script attempts to install most dependencies, ensure the following are met:
 
@@ -50,7 +52,7 @@ While the installation script attempts to install most dependencies, ensure the 
 
 ---
 
-## 🚀 Installation (Universal Script)
+##  Installation (Universal Script)
 
 1.  **Download the necessary files:**
     Ensure you have the following files from this repository in the same directory (git clone this repo if you haven't already):
@@ -81,7 +83,7 @@ While the installation script attempts to install most dependencies, ensure the 
 
 ---
 
-## 🔧 Apache Configuration Activation
+##  Apache Configuration Activation
 
 After running the installation script, you **must** manually edit your Apache configuration to activate the bouncer. Add the following directives inside the relevant `<VirtualHost>` section(s) of your Apache configuration file (e.g., `/etc/httpd/conf.d/your-site.conf` on RHEL/CentOS or `/etc/apache2/sites-available/your-site.conf` on Debian/Ubuntu):
 
@@ -114,7 +116,7 @@ This hook runs early in the request cycle, before content generation, allowing m
 
 ### Activating the Bouncer in Apache
 
-⚠️ Important: After adding the `LuaLoadFile` and `LuaHookAccessChecker` lines to your Apache configuration:
+ Important: After adding the `LuaLoadFile` and `LuaHookAccessChecker` lines to your Apache configuration:
 
 1.  **Test your Apache configuration for syntax errors:**
 
@@ -126,13 +128,13 @@ This hook runs early in the request cycle, before content generation, allowing m
     * Debian/Ubuntu: `sudo systemctl restart apache2`
     * RHEL/CentOS/Fedora: `sudo systemctl restart httpd`
 
-✅ The bouncer should now be active for the configured virtual host(s).
+ The bouncer should now be active for the configured virtual host(s).
 
 ---
 
 ### File Descriptions
 
-#### 📄 Configuration File
+####  Configuration File
 * **Location:** `/etc/crowdsec/bouncers/apache-bouncer.yaml`
 * **Contents:**
     * `crowdsec_lapi_url`: URL of the CrowdSec Local API (default: `http://127.0.0.1:8080/`). **Must be reachable** by the Apache server process.
@@ -150,7 +152,7 @@ It reads the configuration, implements the `check_access` function hooked by Apa
 queries the CrowdSec LAPI, manages the cache, logs actions, 
 and returns the appropriate HTTP status code (e.g., `403` for blocked IPs or allows Apache to continue processing).
 
-#### 🪵 Log File
+####  Log File
 
 * **Location:** `/var/log/crowdsec-apache-bouncer.log`
 * **Contents:** Records the bouncer's activity, including IPs checked against LAPI, cache hits, blocked requests, 
